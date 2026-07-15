@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     "stainless steel laser cutting",
     "cnc press brake bending hyderabad",
   ],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Star CNC Engineering Works",
     description:
