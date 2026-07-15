@@ -100,70 +100,29 @@ export default function Hero() {
           {/* Visual panel */}
           <div data-reveal="" data-reveal-delay="300" className="hidden lg:block">
             <div className="relative w-full max-w-lg mx-auto aspect-square">
-              {/* Main teal card */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-teal to-teal-dark overflow-hidden">
-                {/* Engineering SVG pattern */}
-                <svg
-                  className="absolute inset-0 w-full h-full opacity-20"
-                  viewBox="0 0 400 400"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <pattern
-                      id="grid"
-                      width="40"
-                      height="40"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <path
-                        d="M 40 0 L 0 0 0 40"
-                        fill="none"
-                        stroke="white"
-                        strokeWidth="0.5"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="400" height="400" fill="url(#grid)" />
-                  <circle cx="200" cy="200" r="80" fill="none" stroke="white" strokeWidth="0.8" />
-                  <circle cx="200" cy="200" r="140" fill="none" stroke="white" strokeWidth="0.5" />
-                  <circle cx="200" cy="200" r="180" fill="none" stroke="white" strokeWidth="0.3" />
-                  <line x1="0" y1="200" x2="400" y2="200" stroke="white" strokeWidth="0.8" />
-                  <line x1="200" y1="0" x2="200" y2="400" stroke="white" strokeWidth="0.8" />
-                  <rect x="15" y="15" width="28" height="28" fill="none" stroke="white" strokeWidth="1.2" />
-                  <rect x="357" y="15" width="28" height="28" fill="none" stroke="white" strokeWidth="1.2" />
-                  <rect x="15" y="357" width="28" height="28" fill="none" stroke="white" strokeWidth="1.2" />
-                  <rect x="357" y="357" width="28" height="28" fill="none" stroke="white" strokeWidth="1.2" />
-                  <circle cx="200" cy="200" r="6" fill="white" />
-                  <circle cx="200" cy="200" r="22" fill="none" stroke="white" strokeWidth="1.5" />
-                </svg>
-
-                {/* Center content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="material-symbols-outlined text-white/30 text-9xl">
-                    precision_manufacturing
-                  </span>
-                  <p className="text-white/80 text-4xl font-bold font-serif mt-4 tracking-tight">
-                    HSG Fiber
-                  </p>
-                  <p className="text-white/50 text-sm mt-1 tracking-widest uppercase">
-                    SF3015G · CNC Press Brake
-                  </p>
-                </div>
+              {/* Main image card */}
+              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="/cnc-image.webp"
+                  alt="CNC laser cutting machine in action at Star CNC Engineering Works"
+                  className="w-full h-full object-cover"
+                />
+                {/* Dark gradient overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                 {/* Bottom stat row */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 grid grid-cols-3 gap-3">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+                  <div className="bg-white/15 backdrop-blur-md rounded-lg p-3 text-center">
                     <p className="text-white font-bold text-sm">15 mm</p>
-                    <p className="text-white/55 text-xs">Max MS</p>
+                    <p className="text-white/60 text-xs">Max MS</p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+                  <div className="bg-white/15 backdrop-blur-md rounded-lg p-3 text-center">
                     <p className="text-white font-bold text-sm">3 Metals</p>
-                    <p className="text-white/55 text-xs">MS · AL · SS</p>
+                    <p className="text-white/60 text-xs">MS · AL · SS</p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
+                  <div className="bg-white/15 backdrop-blur-md rounded-lg p-3 text-center">
                     <p className="text-white font-bold text-sm">Any Vol.</p>
-                    <p className="text-white/55 text-xs">Proto → Bulk</p>
+                    <p className="text-white/60 text-xs">Proto → Bulk</p>
                   </div>
                 </div>
               </div>
