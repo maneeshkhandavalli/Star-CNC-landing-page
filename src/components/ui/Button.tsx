@@ -6,7 +6,7 @@ interface ButtonProps {
   children: ReactNode;
   variant?: Variant;
   href?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   className?: string;
   type?: "button" | "submit" | "reset";
 }
