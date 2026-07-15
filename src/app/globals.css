@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-teal: #00897B;
+  --color-teal-dark: #004D47;
+  --color-orange: #F07B20;
+  --color-orange-dark: #d96b18;
+  --color-off-white: #F5F6F8;
+  --color-warm-gray: #F7F4F0;
+  --color-light-gray: #F0F2F5;
+  --color-navy: #1A2340;
+  --color-slate: #4A5568;
+  --color-border: #E1E2E4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1A2340;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.marquee-track-reverse {
+  animation: marquee 40s linear infinite reverse;
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.marquee-track:hover,
+.marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Scroll reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading screen progress bar */
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
 }
