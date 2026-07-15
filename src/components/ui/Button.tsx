@@ -28,7 +28,7 @@ export default function Button({
   };
   const cls = `${base} ${variants[variant]} ${className}`;
 
-  if (href) return <a href={href} className={cls}>{children}</a>;
+  if (href) return <a href={href} onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>} className={cls}>{children}</a>;
   return (
     <button type={type} onClick={onClick} className={cls}>
       {children}

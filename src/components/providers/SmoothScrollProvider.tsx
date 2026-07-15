@@ -5,7 +5,7 @@ import Lenis from "lenis";
 
 let _lenis: Lenis | null = null;
 
-export function lenisScrollTo(target: HTMLElement | string, offset = 0) {
+export function lenisScrollTo(target: HTMLElement | string | number, offset = 0) {
   _lenis?.scrollTo(target as HTMLElement, { offset });
 }
 

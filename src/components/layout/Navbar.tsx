@@ -30,16 +30,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, mobile = false) => {
     e.preventDefault();
-    scrollTo(href);
-  };
-
-  const handleNavClickMobile = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setOpen(false);
-    // slight delay so menu closes before scrolling
-    setTimeout(() => scrollTo(href), 50);
+    if (mobile) {
+      setOpen(false);
+      setTimeout(() => scrollTo(href), 50);
+    } else {
+      scrollTo(href);
+    }
   };
 
   return (
@@ -100,7 +98,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className="text-gray-700 text-base font-medium hover:text-teal transition-colors"
-              onClick={(e) => handleNavClickMobile(e, link.href)}
+              onClick={(e) => handleNavClick(e, link.href, true)}
             >
               {link.label}
             </a>
@@ -109,7 +107,7 @@ export default function Navbar() {
             href="#contact"
             variant="primary"
             className="mt-1 w-full justify-center text-base"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClickMobile(e, "#contact")}
+            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#contact", true)}
           >
             Get a Quote
           </Button>
