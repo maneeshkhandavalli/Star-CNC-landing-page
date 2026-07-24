@@ -55,7 +55,9 @@ export default function Hero() {
           loop
           muted
           playsInline
+          poster="/imagesforstarcnc/cnc-machine.jpg"
           className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => (e.currentTarget.style.display = "none")}
         >
           <source src="/Close_up_shot_of_a_CNC_laser_c.mp4" type="video/mp4" />
         </video>
