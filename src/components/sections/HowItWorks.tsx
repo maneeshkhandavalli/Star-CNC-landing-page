@@ -29,11 +29,11 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-off-white py-10 lg:py-20">
+    <section id="how-it-works" className="bg-off-white py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 lg:mb-14" data-reveal="">
+        <div className="text-center mb-12" data-reveal="">
           <SectionLabel>Process</SectionLabel>
-          <h2 className="font-serif text-navy text-[28px] sm:text-4xl font-bold mt-1">
+          <h2 className="text-navy text-[28px] sm:text-4xl font-bold mt-1">
             How It Works
           </h2>
           <p className="text-slate mt-3 max-w-xl mx-auto text-sm sm:text-base">
@@ -58,7 +58,7 @@ export default function HowItWorks() {
               <div className={`flex-1 ${i < steps.length - 1 ? "pb-6" : ""}`}>
                 <div className="flex items-center gap-2 h-10">
                   <span className="material-symbols-outlined text-teal text-lg leading-none">{step.icon}</span>
-                  <h3 className="font-serif text-navy text-[15px] font-bold">{step.title}</h3>
+                  <h3 className="text-navy text-[15px] font-bold">{step.title}</h3>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function HowItWorks() {
                   <span className="material-symbols-outlined text-teal text-2xl">{step.icon}</span>
                 </div>
                 <span className="text-teal text-xs font-bold tracking-widest mt-1 mb-3">{step.number}</span>
-                <h3 className="font-serif text-navy text-lg font-bold mb-1">{step.title}</h3>
+                <h3 className="text-navy text-lg font-bold mb-1">{step.title}</h3>
                 <p className="text-slate text-sm leading-relaxed">{step.desc}</p>
               </div>
               {/* Dashed arrow between steps */}

@@ -11,7 +11,7 @@ export default function Footer() {
               <span className="material-symbols-outlined text-orange text-2xl">
                 precision_manufacturing
               </span>
-              <span className="font-serif text-lg font-semibold">Star CNC</span>
+              <span className="text-lg font-semibold">Star CNC</span>
             </div>
             <p className="text-white/65 text-sm leading-relaxed mb-4">
               Precision laser cutting & CNC bending for India's EV, solar, and

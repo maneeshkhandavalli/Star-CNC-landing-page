@@ -40,6 +40,6 @@ export const trustStats = [
   { value: "20+ Years", label: "Sheet Metal Expertise" },
   { value: "ISO 9001:2015", label: "Certified Group" },
   { value: "HSG + SF3015G", label: "Advanced Machinery" },
-  { value: "1 to ∞ Units", label: "Prototype to Bulk" },
+  { value: "1 to Bulk", label: "Prototype to Bulk" },
   { value: "Hyderabad", label: "Chinthal, 500054" },
 ];

@@ -60,19 +60,9 @@ export default function Hero() {
           <source src="/Close_up_shot_of_a_CNC_laser_c.mp4" type="video/mp4" />
         </video>
         {/* Dark tint overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/25" />
         {/* Dark gradient overlay at bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-        {/* Machine label tags at top-left */}
-        <div className="absolute top-4 left-4 flex gap-2">
-          <span className="bg-white/10 border border-white/15 rounded-md px-3 py-1.5 text-xs text-white/60 tracking-wider">
-            Fiber laser cutter
-          </span>
-          <span className="bg-white/10 border border-white/15 rounded-md px-3 py-1.5 text-xs text-white/60 tracking-wider">
-            CNC press brake
-          </span>
-        </div>
 
         {/* Stats overlay at bottom */}
         <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 md:flex gap-4">
@@ -141,9 +131,10 @@ export default function Hero() {
           href={parentCompany.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-auto text-xs text-[#0f9d7a] font-medium hover:underline whitespace-nowrap"
+          className="bg-[#f0f0ec] border border-gray-200 rounded-lg px-4 py-2 ml-auto flex items-center gap-2 hover:border-[#0f9d7a] transition-colors shrink-0"
         >
-          Need finished products? Visit P&P Engineering Works →
+          <span className="text-xs text-gray-500">Need finished products?</span>
+          <span className="text-xs text-[#0f9d7a] font-semibold">Visit P&amp;P Works →</span>
         </a>
       </div>
 

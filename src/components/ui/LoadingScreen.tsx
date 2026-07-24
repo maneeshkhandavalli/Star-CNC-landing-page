@@ -65,7 +65,7 @@ export default function LoadingScreen() {
             className="brightness-0 invert"
             priority
           />
-          <p className="font-serif text-white text-4xl font-bold tracking-wider">
+          <p className="text-white text-4xl font-bold tracking-wider">
             STAR CNC
           </p>
           <p className="text-white/60 text-[11px] tracking-[0.3em] uppercase">

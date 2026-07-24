@@ -53,11 +53,11 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-off-white py-10 lg:py-20">
+    <section id="contact" className="bg-off-white py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-reveal="" className="text-center mb-8 lg:mb-14">
+        <div data-reveal="" className="text-center mb-12">
           <SectionLabel>Get in Touch</SectionLabel>
-          <h2 className="font-serif text-navy text-[28px] sm:text-4xl font-bold">
+          <h2 className="text-navy text-[28px] sm:text-4xl font-bold">
             Request a Quote
           </h2>
           <p className="text-slate mt-3 max-w-lg mx-auto">

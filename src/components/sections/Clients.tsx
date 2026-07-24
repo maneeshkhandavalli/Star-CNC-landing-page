@@ -5,10 +5,10 @@ export default function Clients() {
   const doubled = [...clients, ...clients];
 
   return (
-    <section id="clients" className="bg-off-white py-20 overflow-hidden">
+    <section id="clients" className="bg-off-white py-20 md:py-24 overflow-hidden">
       <div data-reveal="" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <SectionLabel>Trusted By</SectionLabel>
-        <h2 className="font-serif text-navy text-3xl sm:text-4xl font-bold">
+        <h2 className="text-navy text-3xl sm:text-4xl font-bold">
           Our Clients
         </h2>
         <p className="text-slate mt-3 max-w-lg mx-auto">

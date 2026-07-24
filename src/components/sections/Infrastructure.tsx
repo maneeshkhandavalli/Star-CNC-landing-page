@@ -40,11 +40,11 @@ const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(company.address
 
 export default function Infrastructure() {
   return (
-    <section id="infrastructure" className="bg-white py-10 lg:py-20">
+    <section id="infrastructure" className="bg-white py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 lg:mb-14" data-reveal="">
+        <div className="text-center mb-12" data-reveal="">
           <SectionLabel>Infrastructure</SectionLabel>
-          <h2 className="font-serif text-navy text-[28px] sm:text-4xl font-bold mt-1">
+          <h2 className="text-navy text-[28px] sm:text-4xl font-bold mt-1">
             Our Machines
           </h2>
           <p className="text-slate mt-3 max-w-xl mx-auto">
@@ -76,7 +76,7 @@ export default function Infrastructure() {
                 <span className="inline-block bg-teal/10 text-teal text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
                   {m.tag}
                 </span>
-                <h3 className="font-serif text-navy text-xl font-bold mb-4">{m.name}</h3>
+                <h3 className="text-navy text-xl font-bold mb-4">{m.name}</h3>
                 <ul className="hidden lg:block space-y-2.5">
                   {m.specs.map((s) => (
                     <li key={s} className="flex items-start gap-2.5 text-slate text-sm">

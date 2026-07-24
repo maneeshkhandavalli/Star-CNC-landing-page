@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { company } from "@/lib/content";
 import Button from "@/components/ui/Button";
 import { lenisScrollTo } from "@/components/providers/SmoothScrollProvider";
@@ -45,16 +45,13 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#0f9d7a] ${scrolled ? "shadow-sm" : ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="/" className="flex items-center">
-          <Image
+        <Link href="/">
+          <img
             src="/favicon.png"
-            alt="Star CNC Engineering Works"
-            width={40}
-            height={40}
-            className="h-10 w-auto brightness-0 invert"
-            priority
+            alt="Star CNC"
+            style={{ height: '52px', width: 'auto' }}
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-7">
@@ -71,7 +68,7 @@ export default function Navbar() {
           <Button
             href="#contact"
             variant="primary"
-            className="ml-2 !bg-white !text-[#0f9d7a] font-semibold"
+            className="ml-2 !bg-[#0b0f1a] !text-white font-semibold px-5 py-2 hover:!bg-[#1a2a3a]"
             onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#contact")}
           >
             Get a Quote

@@ -41,11 +41,11 @@ const usps = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="bg-light-gray py-10 lg:py-20">
+    <section id="why-us" className="bg-light-gray py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-reveal="" className="text-center mb-8 lg:mb-14">
+        <div data-reveal="" className="text-center mb-12">
           <SectionLabel>Why Choose Us</SectionLabel>
-          <h2 className="font-serif text-navy text-[28px] sm:text-4xl font-bold">
+          <h2 className="text-navy text-[28px] sm:text-4xl font-bold">
             The Star CNC Advantage
           </h2>
           <p className="text-slate mt-3 max-w-xl mx-auto">
@@ -67,7 +67,7 @@ export default function WhyUs() {
                   {usp.icon}
                 </span>
               </div>
-              <h3 className="font-serif text-navy text-xl font-semibold mb-2">
+              <h3 className="text-navy text-xl font-semibold mb-2">
                 {usp.title}
               </h3>
               <p className="text-slate text-sm leading-relaxed">{usp.description}</p>

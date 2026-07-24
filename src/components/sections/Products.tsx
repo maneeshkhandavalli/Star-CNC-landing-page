@@ -36,11 +36,11 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="bg-light-gray py-10 lg:py-20">
+    <section id="products" className="bg-light-gray py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-reveal="" className="text-center mb-8 lg:mb-14">
+        <div data-reveal="" className="text-center mb-12">
           <SectionLabel>Parent Company</SectionLabel>
-          <h2 className="font-serif text-navy text-[28px] sm:text-4xl font-bold">
+          <h2 className="text-navy text-[28px] sm:text-4xl font-bold">
             {parentCompany.name}
           </h2>
           <p className="text-slate mt-3 max-w-xl mx-auto">
@@ -62,7 +62,7 @@ export default function Products() {
                   {product.icon}
                 </span>
               </div>
-              <h3 className="font-serif text-navy text-lg font-semibold mb-2">
+              <h3 className="text-navy text-lg font-semibold mb-2">
                 {product.title}
               </h3>
               <p className="text-slate text-sm leading-relaxed">
@@ -77,7 +77,7 @@ export default function Products() {
               <p className="text-white/50 text-xs uppercase tracking-widest mb-3">
                 Visit
               </p>
-              <h3 className="font-serif text-2xl font-bold mb-3">{parentCompany.name}</h3>
+              <h3 className="text-2xl font-bold mb-3">{parentCompany.name}</h3>
               <p className="text-white/65 text-sm leading-relaxed">
                 Explore the full range of finished sheet metal products, custom
                 enclosures, and industrial solutions.
