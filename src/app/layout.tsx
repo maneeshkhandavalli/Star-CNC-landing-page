@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Star CNC Engineering Works | Laser Cutting & CNC Bending Hyderabad",
+  title: "Star CNC Engineering Works | Precision Laser Cutting & CNC Bending",
   description:
     "Precision laser cutting and CNC bending services in Hyderabad. MS 0.5–15mm, AL 1–10mm, SS 0.5–10mm. Custom prototypes to bulk production. Est. 2009. ISO 9001:2015 certified group.",
   keywords: [
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: "/favicon.png",
+    shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
@@ -56,7 +57,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
         />
       </head>
-      <body className="font-sans antialiased bg-white text-navy">
+      <body className="font-sans antialiased bg-white text-navy" suppressHydrationWarning>
         <SmoothScrollProvider>
           <LoadingScreen />
           <RevealObserver />

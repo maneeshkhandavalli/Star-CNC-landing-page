@@ -1,9 +1,11 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 
 const services = [
   {
     id: "laser",
+    image: "/imagesforstarcnc/cnc-cutting.avif",
     icon: "local_fire_department",
     title: "Laser Cutting",
     subtitle: "HSG Fiber Laser · SF3015G",
@@ -21,6 +23,7 @@ const services = [
   },
   {
     id: "bending",
+    image: "/imagesforstarcnc/bending-image.jpg",
     icon: "construction",
     title: "CNC Bending",
     subtitle: "CNC Press Brake",
@@ -59,8 +62,19 @@ export default function Services() {
               key={service.id}
               data-reveal=""
               data-reveal-delay={String(i * 150)}
-              className="bg-white rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
+              {/* Image */}
+              <div className="relative w-full h-48 overflow-hidden rounded-2xl">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+
               {/* Header */}
               <div
                 className={`p-5 lg:p-8 ${
@@ -98,11 +112,11 @@ export default function Services() {
                   <p className="text-xs font-semibold uppercase tracking-widest text-slate mb-3">
                     Capabilities
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                     {service.capabilities.map((cap) => (
                       <span
                         key={cap}
-                        className="bg-off-white text-navy text-xs font-medium px-3 py-1.5 rounded-full border border-border"
+                        className="text-xs uppercase tracking-wider text-gray-400"
                       >
                         {cap}
                       </span>

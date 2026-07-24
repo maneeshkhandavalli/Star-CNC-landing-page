@@ -14,8 +14,8 @@ export const company = {
 
 export const parentCompany = {
   name: "P&P Engineering Works",
-  website: "pandpengg.com",
-  url: "https://pandpengg.com",
+  website: "pandpengg.vercel.app",
+  url: "https://pandpengg.vercel.app",
 };
 
 export const materials = [

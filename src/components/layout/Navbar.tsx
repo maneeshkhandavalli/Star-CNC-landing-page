@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { company } from "@/lib/content";
 import Button from "@/components/ui/Button";
 import { lenisScrollTo } from "@/components/providers/SmoothScrollProvider";
@@ -41,19 +42,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white ${scrolled ? "shadow-sm border-b border-gray-100" : "border-b border-gray-200"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#0f9d7a] ${scrolled ? "shadow-sm" : ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 text-teal font-bold text-lg">
-          <span className="material-symbols-outlined text-orange text-2xl leading-none">
-            precision_manufacturing
-          </span>
-          <span className="font-serif leading-tight">
-            Star CNC
-            <span className="block text-gray-400 text-[10px] font-sans font-normal tracking-wider uppercase leading-none">
-              Engineering Works
-            </span>
-          </span>
+        <a href="/" className="flex items-center">
+          <Image
+            src="/favicon.png"
+            alt="Star CNC Engineering Works"
+            width={40}
+            height={40}
+            className="h-10 w-auto brightness-0 invert"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}
@@ -63,7 +63,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-gray-600 hover:text-teal text-sm font-medium transition-colors"
+              className="text-white hover:text-white/80 text-sm font-medium transition-colors"
             >
               {link.label}
             </a>
@@ -71,7 +71,7 @@ export default function Navbar() {
           <Button
             href="#contact"
             variant="primary"
-            className="ml-2"
+            className="ml-2 !bg-white !text-[#0f9d7a] font-semibold"
             onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, "#contact")}
           >
             Get a Quote

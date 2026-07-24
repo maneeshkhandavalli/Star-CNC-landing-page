@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import { company } from "@/lib/content";
@@ -6,6 +7,7 @@ const machines = [
   {
     tag: "Fiber Laser",
     name: "HSG Fiber Laser",
+    image: "/imagesforstarcnc/cnc-machine.jpg",
     specs: [
       "3000W high-power fiber source",
       "Cutting area: 3000 × 1500 mm",
@@ -15,6 +17,7 @@ const machines = [
   {
     tag: "Laser System",
     name: "SF3015G Laser System",
+    image: "/imagesforstarcnc/sf3015g.jpg",
     specs: [
       "High-speed precision cutting head",
       "Auto nozzle exchange & focus adjust",
@@ -24,6 +27,7 @@ const machines = [
   {
     tag: "CNC Bending",
     name: "CNC Press Brake",
+    image: "/imagesforstarcnc/bending-machine.jpg",
     specs: [
       "Bending length up to 3000 mm",
       "CNC-controlled back-gauge for repeatability",
@@ -53,21 +57,35 @@ export default function Infrastructure() {
           {machines.map((m) => (
             <div
               key={m.name}
-              className="border border-border rounded-xl p-6 bg-off-white hover:shadow-md transition-shadow duration-200"
+              className="border border-border rounded-2xl overflow-hidden bg-off-white hover:shadow-md transition-shadow duration-200"
             >
-              {/* Teal tag */}
-              <span className="inline-block bg-teal/10 text-teal text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-                {m.tag}
-              </span>
-              <h3 className="font-serif text-navy text-xl font-bold mb-4">{m.name}</h3>
-              <ul className="hidden lg:block space-y-2.5">
-                {m.specs.map((s) => (
-                  <li key={s} className="flex items-start gap-2.5 text-slate text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal shrink-0 mt-1.5" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
+              {/* Image */}
+              <div className="relative w-full h-56 overflow-hidden rounded-2xl">
+                <Image
+                  src={m.image}
+                  alt={m.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Teal tag */}
+                <span className="inline-block bg-teal/10 text-teal text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+                  {m.tag}
+                </span>
+                <h3 className="font-serif text-navy text-xl font-bold mb-4">{m.name}</h3>
+                <ul className="hidden lg:block space-y-2.5">
+                  {m.specs.map((s) => (
+                    <li key={s} className="flex items-start gap-2.5 text-slate text-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal shrink-0 mt-1.5" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

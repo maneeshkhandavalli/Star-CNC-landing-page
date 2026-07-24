@@ -1,6 +1,4 @@
-import { company, materials, parentCompany } from "@/lib/content";
-import Button from "@/components/ui/Button";
-import SectionLabel from "@/components/ui/SectionLabel";
+import { parentCompany } from "@/lib/content";
 
 const stripClients = [
   "Toshiba",
@@ -13,145 +11,160 @@ const marqueeLoop = Array.from({ length: 6 }, () => stripClients).flat();
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-[#E8EAED] pt-16 lg:pb-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-10 lg:py-20">
-          {/* Content */}
-          <div data-reveal="">
-            <SectionLabel>Est. 2009 · Hyderabad · ISO 9001:2015</SectionLabel>
-            <h1 className="font-serif text-navy text-[28px] sm:text-5xl lg:text-[52px] font-bold leading-tight mb-4 sm:mb-6">
-              Precision Laser{" "}
-              <span className="text-teal">Cutting</span>
-              <br />& <span className="text-teal">CNC Bending</span>
-            </h1>
-            <p className="text-slate text-lg leading-relaxed mb-8 max-w-lg">
-              Advanced fiber laser cutting and CNC press brake bending services for
-              India's EV, solar, and industrial manufacturing sectors. Prototype
-              to bulk — any volume.
-            </p>
+    <section className="bg-[#fafaf8] px-8 md:px-16 pt-16 md:pt-20 pb-6">
+      {/* Top section — two column text row */}
+      <div className="flex flex-col md:flex-row justify-between items-start gap-20 md:gap-32 mb-12">
+        {/* Left column */}
+        <div className="md:w-[60%]">
+          <p className="text-xs tracking-[0.2em] uppercase text-[#0f9d7a] font-semibold mb-3">
+            Est. 2009 · Hyderabad · ISO 9001:2015
+          </p>
+          <h1 className="text-6xl md:text-7xl font-bold text-[#0b0f1a] leading-[1.05] pb-4">
+            Precision laser cutting & CNC bending.
+          </h1>
+        </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <Button href="#contact" variant="primary" className="text-base px-8 py-3.5">
-                <span className="material-symbols-outlined text-lg">description</span>
-                Get a Quote
-              </Button>
-              <Button
-                href={`tel:${company.phone1}`}
-                variant="outline"
-                className="text-base px-8 py-3.5"
-              >
-                <span className="material-symbols-outlined text-lg">call</span>
-                {company.phone1}
-              </Button>
-            </div>
-
-            {/* Mobile client strip — inline, below CTAs, not absolute */}
-            <div className="lg:hidden flex items-center gap-0 mb-6 py-2.5 px-4 rounded-lg bg-white/30 backdrop-blur-sm border border-white/30 overflow-hidden">
-              <p className="text-teal text-[10px] font-semibold uppercase tracking-widest shrink-0 whitespace-nowrap mr-4">
-                Trusted by
-              </p>
-              <span className="w-px h-4 bg-white/40 shrink-0 mr-4" />
-              <div className="overflow-hidden flex-1">
-                <div className="marquee-track" style={{ animationDuration: "40s" }}>
-                  {marqueeLoop.map((name, i) => (
-                    <span key={i} className="shrink-0 inline-flex items-center">
-                      <span className="text-navy text-xs font-medium whitespace-nowrap px-4">
-                        {name}
-                      </span>
-                      <span className="w-1 h-1 rounded-full bg-teal shrink-0" />
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Material spec row — hidden on mobile */}
-            <div className="hidden sm:inline-block border border-border rounded-lg p-4 bg-off-white w-full sm:w-auto">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate mb-3">
-                Material Capabilities
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {materials.map((mat) => (
-                  <div
-                    key={mat.name}
-                    className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-1.5"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-teal shrink-0" />
-                    <span className="text-sm font-medium text-navy">{mat.name}</span>
-                    <span className="text-xs text-slate">{mat.range}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <p className="mt-5 text-sm text-slate">
-              Need finished products?{" "}
-              <a
-                href={parentCompany.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-teal hover:text-teal-dark font-medium underline underline-offset-2"
-              >
-                Visit {parentCompany.name} →
-              </a>
-            </p>
-          </div>
-
-          {/* Visual panel */}
-          <div data-reveal="" data-reveal-delay="300" className="hidden lg:block">
-            <div className="relative w-full max-w-lg mx-auto aspect-square">
-              {/* Main image card */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/cnc-image.webp"
-                  alt="CNC laser cutting machine in action at Star CNC Engineering Works"
-                  className="w-full h-full object-cover"
-                />
-                {/* Dark gradient overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                {/* Bottom stat row */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 grid grid-cols-3 gap-3">
-                  <div className="bg-white/15 backdrop-blur-md rounded-lg p-3 text-center">
-                    <p className="text-white font-bold text-sm">15 mm</p>
-                    <p className="text-white/60 text-xs">Max MS</p>
-                  </div>
-                  <div className="bg-white/15 backdrop-blur-md rounded-lg p-3 text-center">
-                    <p className="text-white font-bold text-sm">3 Metals</p>
-                    <p className="text-white/60 text-xs">MS · AL · SS</p>
-                  </div>
-                  <div className="bg-white/15 backdrop-blur-md rounded-lg p-3 text-center">
-                    <p className="text-white font-bold text-sm">Any Vol.</p>
-                    <p className="text-white/60 text-xs">Proto → Bulk</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badge */}
-              <div className="absolute -top-4 -right-4 bg-orange text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                Est. 2009
-              </div>
-            </div>
+        {/* Right column */}
+        <div className="md:w-[40%] pt-4 md:pt-4">
+          <p className="text-base text-gray-500 leading-relaxed mb-6 max-w-sm">
+            Advanced fiber laser cutting and CNC press brake bending for
+            India&apos;s EV, solar, and industrial sectors. Prototype to bulk —
+            any volume.
+          </p>
+          <div className="flex gap-3">
+            <a
+              href="#contact"
+              className="bg-[#0b0f1a] text-white text-sm font-semibold px-6 py-3 rounded-md hover:bg-[#1a2a3a] transition-colors"
+            >
+              Get a quote
+            </a>
+            <a
+              href="#infrastructure"
+              className="border border-gray-200 text-gray-600 text-sm px-5 py-3 rounded-md hover:border-gray-400 transition-colors"
+            >
+              Our machines →
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Desktop client strip — absolute, pinned to hero bottom, floats over the edge */}
-      <div className="hidden lg:flex absolute bottom-0 left-0 right-0 items-center px-8 py-3.5 bg-white/20 backdrop-blur-md border-t border-white/20 overflow-hidden">
-        <p className="text-teal text-[10px] font-semibold uppercase tracking-widest shrink-0 whitespace-nowrap">
-          Trusted by
-        </p>
-        <span className="w-px h-4 bg-white/30 shrink-0 mx-5" />
-        <div className="overflow-hidden flex-1">
-          <div className="marquee-track" style={{ animationDuration: "50s" }}>
-            {marqueeLoop.map((name, i) => (
-              <span key={i} className="shrink-0 inline-flex items-center">
-                <span className="text-navy text-sm font-medium whitespace-nowrap px-7">
-                  {name}
+      {/* Full width image container */}
+      <div className="relative w-full h-[42vh] md:h-[46vh] rounded-2xl overflow-hidden mt-2 mb-4">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/Close_up_shot_of_a_CNC_laser_c.mp4" type="video/mp4" />
+        </video>
+        {/* Dark tint overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        {/* Dark gradient overlay at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+        {/* Machine label tags at top-left */}
+        <div className="absolute top-4 left-4 flex gap-2">
+          <span className="bg-white/10 border border-white/15 rounded-md px-3 py-1.5 text-xs text-white/60 tracking-wider">
+            Fiber laser cutter
+          </span>
+          <span className="bg-white/10 border border-white/15 rounded-md px-3 py-1.5 text-xs text-white/60 tracking-wider">
+            CNC press brake
+          </span>
+        </div>
+
+        {/* Stats overlay at bottom */}
+        <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 md:flex gap-4">
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-xl p-5">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl md:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: 'tabular-nums', fontFamily: 'ui-monospace, system-ui, sans-serif' }}>15</span>
+              <span className="text-sm text-white/50 font-normal">mm</span>
+            </div>
+            <p className="text-[9px] tracking-[0.15em] uppercase text-white/40 mt-1">
+              MAX MS THICKNESS
+            </p>
+          </div>
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-xl p-5">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl md:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: 'tabular-nums', fontFamily: 'ui-monospace, system-ui, sans-serif' }}>3</span>
+              <span className="text-sm text-white/50 font-normal">metals</span>
+            </div>
+            <p className="text-[9px] tracking-[0.15em] uppercase text-white/40 mt-1">
+              MS · AL · SS
+            </p>
+          </div>
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-xl p-5">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl md:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: 'tabular-nums', fontFamily: 'ui-monospace, system-ui, sans-serif' }}>Any</span>
+              <span className="text-sm text-white/50 font-normal">vol.</span>
+            </div>
+            <p className="text-[9px] tracking-[0.15em] uppercase text-white/40 mt-1">
+              PROTO → BULK
+            </p>
+          </div>
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-xl p-5">
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl md:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: 'tabular-nums', fontFamily: 'ui-monospace, system-ui, sans-serif' }}>20</span>
+              <span className="text-sm text-white/50 font-normal">+</span>
+            </div>
+            <p className="text-[9px] tracking-[0.15em] uppercase text-white/40 mt-1">
+              YEARS EXPERTISE
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Material capabilities strip */}
+      <div className="flex flex-wrap items-center gap-4 py-5 mt-4">
+        <span className="text-xs tracking-[0.15em] uppercase text-gray-400 shrink-0">
+          Materials
+        </span>
+        <div className="flex flex-wrap gap-3">
+          <div className="flex items-center gap-2 bg-[#f0f0ec] rounded-md px-3 py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] shrink-0" />
+            <span className="text-xs text-gray-600 font-medium">Mild steel</span>
+            <span className="text-xs text-gray-400">0.5–15mm</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#f0f0ec] rounded-md px-3 py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] shrink-0" />
+            <span className="text-xs text-gray-600 font-medium">Aluminium</span>
+            <span className="text-xs text-gray-400">1–10mm</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#f0f0ec] rounded-md px-3 py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] shrink-0" />
+            <span className="text-xs text-gray-600 font-medium">Stainless steel</span>
+            <span className="text-xs text-gray-400">0.5–10mm</span>
+          </div>
+        </div>
+        <a
+          href={parentCompany.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-auto text-xs text-[#0f9d7a] font-medium hover:underline whitespace-nowrap"
+        >
+          Need finished products? Visit P&P Engineering Works →
+        </a>
+      </div>
+
+      {/* Client marquee */}
+      <div className="border-t border-gray-100 py-5 mt-2">
+        <div className="flex items-center overflow-hidden">
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#00897B] shrink-0 whitespace-nowrap">
+            Trusted by
+          </p>
+          <span className="w-px h-4 bg-gray-200 shrink-0 mx-5" />
+          <div className="overflow-hidden flex-1">
+            <div className="marquee-track" style={{ animationDuration: "50s" }}>
+              {marqueeLoop.map((name, i) => (
+                <span key={i} className="shrink-0 inline-flex items-center">
+                  <span className="text-[#1A2340] text-sm font-medium whitespace-nowrap px-7">
+                    {name}
+                  </span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00897B] shrink-0" />
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
-              </span>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
