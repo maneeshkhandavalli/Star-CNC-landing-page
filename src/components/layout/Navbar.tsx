@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/">
           <img
-            src="/favicon.png"
+            src="/main-logo.png"
             alt="Star CNC"
             style={{ height: '52px', width: 'auto' }}
           />

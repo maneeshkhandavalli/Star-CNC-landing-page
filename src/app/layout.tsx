@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "cnc press brake bending hyderabad",
   ],
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     title: "Star CNC Engineering Works",
