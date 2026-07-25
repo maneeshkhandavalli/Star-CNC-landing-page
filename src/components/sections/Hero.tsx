@@ -55,11 +55,11 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster="/imagesforstarcnc/cnc-machine.jpg"
+          poster="/imagesforcnc/cnc-cutting.webp"
           className="absolute inset-0 w-full h-full object-cover"
-          onError={(e) => (e.currentTarget.style.display = "none")}
+          style={{ opacity: 0.75 }}
         >
-          <source src="/Close_up_shot_of_a_CNC_laser_c.mp4" type="video/mp4" />
+          <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Dark tint overlay */}
         <div className="absolute inset-0 bg-black/25" />
