@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Full-width video */}
-      <div className="relative w-full h-[55vw] md:h-[75vh] min-h-[220px] rounded-2xl overflow-hidden mt-4 md:mt-2 mb-4">
+      <div className="relative w-full h-[35vw] md:h-[50vh] min-h-[150px] rounded-2xl overflow-hidden mt-4 md:mt-2 mb-4">
         <video
           autoPlay
           loop
