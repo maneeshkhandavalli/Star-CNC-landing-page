@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/">
             <img
-              src="/main-logo.png"
+              src="/favicon.png"
               alt="Star CNC"
               style={{ height: "52px", width: "auto" }}
             />
@@ -106,7 +106,7 @@ export default function Navbar() {
         <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 py-3">
           <Link href="/" onClick={() => setOpen(false)}>
             <img
-              src="/main-logo.png"
+              src="/favicon.png"
               alt="Star CNC"
               style={{ height: "52px", width: "auto" }}
             />
