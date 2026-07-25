@@ -11,7 +11,7 @@ const marqueeLoop = Array.from({ length: 6 }, () => stripClients).flat();
 
 export default function Hero() {
   return (
-    <section className="bg-[#fafaf8] px-4 md:px-16 pt-6 md:pt-20 pb-0 md:pb-6">
+    <section className="bg-[#fafaf8] px-4 md:px-16 pt-10 md:pt-20 pb-0 md:pb-6">
       {/* Two-column on desktop, stacked on mobile */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-0 md:gap-32 mb-0 md:mb-12">
         {/* Left column — badge + headline */}
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Full-width video */}
-      <div className="relative w-full h-[42vw] md:h-[55vh] min-h-[170px] rounded-2xl overflow-hidden mt-4 md:mt-2 mb-4">
+      <div className="relative w-full h-[42vw] md:h-[45vh] min-h-[170px] rounded-2xl overflow-hidden mt-4 md:mt-2 mb-4">
         <video
           autoPlay
           loop
