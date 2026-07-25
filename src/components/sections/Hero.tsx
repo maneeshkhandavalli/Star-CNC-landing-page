@@ -11,27 +11,27 @@ const marqueeLoop = Array.from({ length: 6 }, () => stripClients).flat();
 
 export default function Hero() {
   return (
-    <section className="bg-[#fafaf8] px-4 md:px-16 pt-4 md:pt-20 pb-0 md:pb-6">
+    <section className="bg-[#fafaf8] px-4 md:px-16 pt-6 md:pt-20 pb-0 md:pb-6">
       {/* Two-column on desktop, stacked on mobile */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-0 md:gap-32 mb-0 md:mb-12">
         {/* Left column — badge + headline */}
         <div className="md:w-[60%]">
-          <p className="text-[8px] md:text-xs tracking-[2px] md:tracking-[0.2em] uppercase text-[#0f9d7a] md:font-semibold mb-3">
+          <p className="mt-2 text-[8px] md:text-xs tracking-[2px] md:tracking-[0.2em] uppercase text-[#0f9d7a] md:font-semibold mb-3">
             Est. 2009 · Hyderabad · ISO 9001:2015
           </p>
-          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-[#0b0f1a] leading-[1.05] mb-4">
+          <h1 className="text-[32px] md:text-6xl lg:text-7xl font-bold text-[#0b0f1a] leading-tight mb-4">
             Precision laser cutting & CNC bending.
           </h1>
         </div>
 
         {/* Right column — description + buttons */}
         <div className="md:w-[40%] pt-0 md:pt-4">
-          <p className="text-sm text-gray-500 leading-relaxed mb-5 max-w-sm">
+          <p className="text-sm text-gray-500 leading-relaxed mt-3 mb-4 md:mb-5 max-w-sm">
             Advanced fiber laser cutting and CNC press brake bending for
             India&apos;s EV, solar, and industrial sectors. Prototype to bulk —
             any volume.
           </p>
-          <div className="flex gap-3 mb-5 md:mb-0">
+          <div className="mt-4 flex flex-row gap-3 mb-5 md:mb-0">
             <a
               href="#contact"
               className="flex-1 bg-[#0b0f1a] text-white text-sm font-semibold py-3 rounded-lg text-center hover:bg-[#1a2a3a] transition-colors"
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Full-width video */}
-      <div className="relative w-full h-[45vw] md:h-[65vh] min-h-[180px] rounded-2xl overflow-hidden mt-0 md:mt-2 mb-4">
+      <div className="relative w-full h-[42vw] md:h-[55vh] min-h-[170px] rounded-2xl overflow-hidden mt-4 md:mt-2 mb-4">
         <video
           autoPlay
           loop
