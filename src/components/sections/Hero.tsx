@@ -11,7 +11,7 @@ const marqueeLoop = Array.from({ length: 6 }, () => stripClients).flat();
 
 export default function Hero() {
   return (
-    <section className="bg-[#fafaf8] px-4 md:px-16 pt-6 md:pt-20 pb-0 md:pb-6">
+    <section className="bg-[#fafaf8] px-4 md:px-16 pt-4 md:pt-20 pb-0 md:pb-6">
       {/* Two-column on desktop, stacked on mobile */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-0 md:gap-32 mb-0 md:mb-12">
         {/* Left column — badge + headline */}
@@ -19,7 +19,7 @@ export default function Hero() {
           <p className="text-[8px] md:text-xs tracking-[2px] md:tracking-[0.2em] uppercase text-[#0f9d7a] md:font-semibold mb-3">
             Est. 2009 · Hyderabad · ISO 9001:2015
           </p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#0b0f1a] leading-[1.05] mb-4">
+          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-[#0b0f1a] leading-[1.05] mb-4">
             Precision laser cutting & CNC bending.
           </h1>
         </div>
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Full-width video */}
-      <div className="relative w-full h-[45vw] md:h-[46vh] min-h-[180px] rounded-2xl overflow-hidden mt-0 md:mt-2 mb-4">
+      <div className="relative w-full h-[45vw] md:h-[65vh] min-h-[180px] rounded-2xl overflow-hidden mt-0 md:mt-2 mb-4">
         <video
           autoPlay
           loop
@@ -106,32 +106,30 @@ export default function Hero() {
       </div>
 
       {/* Material capabilities strip */}
-      <div className="flex flex-wrap items-center gap-4 py-5 mt-4">
-        <span className="text-xs tracking-[0.15em] uppercase text-gray-400 shrink-0">
+      <div className="flex flex-row gap-2 overflow-x-auto scrollbar-hide pb-1 md:flex-wrap items-center md:gap-4 py-5 mt-4">
+        <span className="text-xs tracking-[0.15em] uppercase text-gray-400 flex-shrink-0">
           Materials
         </span>
-        <div className="flex flex-wrap gap-3">
-          <div className="flex items-center gap-2 bg-[#f0f0ec] rounded-md px-3 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] shrink-0" />
-            <span className="text-xs text-gray-600 font-medium">Mild steel</span>
-            <span className="text-xs text-gray-400">0.5–15mm</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#f0f0ec] rounded-md px-3 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] shrink-0" />
-            <span className="text-xs text-gray-600 font-medium">Aluminium</span>
-            <span className="text-xs text-gray-400">1–10mm</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#f0f0ec] rounded-md px-3 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] shrink-0" />
-            <span className="text-xs text-gray-600 font-medium">Stainless steel</span>
-            <span className="text-xs text-gray-400">0.5–10mm</span>
-          </div>
+        <div className="flex flex-shrink-0 items-center gap-1.5 bg-[#f0f0ec] rounded-md px-2.5 py-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] flex-shrink-0" />
+          <span className="text-xs text-gray-600 font-medium whitespace-nowrap">Mild steel</span>
+          <span className="text-xs text-gray-400 whitespace-nowrap">0.5–15mm</span>
+        </div>
+        <div className="flex flex-shrink-0 items-center gap-1.5 bg-[#f0f0ec] rounded-md px-2.5 py-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] flex-shrink-0" />
+          <span className="text-xs text-gray-600 font-medium whitespace-nowrap">Aluminium</span>
+          <span className="text-xs text-gray-400 whitespace-nowrap">1–10mm</span>
+        </div>
+        <div className="flex flex-shrink-0 items-center gap-1.5 bg-[#f0f0ec] rounded-md px-2.5 py-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0f9d7a] flex-shrink-0" />
+          <span className="text-xs text-gray-600 font-medium whitespace-nowrap">Stainless steel</span>
+          <span className="text-xs text-gray-400 whitespace-nowrap">0.5–10mm</span>
         </div>
         <a
           href={parentCompany.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#f0f0ec] border border-gray-200 rounded-lg px-4 py-2 ml-auto flex items-center gap-2 hover:border-[#0f9d7a] transition-colors shrink-0"
+          className="hidden md:flex bg-[#f0f0ec] border border-gray-200 rounded-lg px-4 py-2 ml-auto items-center gap-2 hover:border-[#0f9d7a] transition-colors shrink-0"
         >
           <span className="text-xs text-gray-500">Need finished products?</span>
           <span className="text-xs text-[#0f9d7a] font-semibold">Visit P&amp;P Works →</span>
