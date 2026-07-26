@@ -44,14 +44,14 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="bg-off-white py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div data-reveal="" className="text-center mb-12">
           <SectionLabel>What We Do</SectionLabel>
           <h2 className="text-navy text-[28px] sm:text-4xl font-bold">
             Our Services
           </h2>
           <p className="text-slate mt-3 max-w-xl mx-auto">
-            Advanced sheet metal processing for India's industrial leaders. From
+            Advanced sheet metal processing for India&apos;s industrial leaders. From
             prototype to bulk production.
           </p>
         </div>
@@ -62,10 +62,10 @@ export default function Services() {
               key={service.id}
               data-reveal=""
               data-reveal-delay={String(i * 150)}
-              className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-white rounded-lg border border-border overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
             >
               {/* Image */}
-              <div className="relative w-full h-48 overflow-hidden rounded-2xl">
+              <div className="relative w-full h-48 sm:h-56 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -104,7 +104,7 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                <div className="block w-full overflow-x-auto bg-off-white border border-border rounded px-3 py-2 text-[10px] sm:text-xs font-mono text-slate mb-6 whitespace-pre">
+                <div className="block w-full overflow-x-auto bg-off-white border border-border rounded-lg px-3 py-2 text-[10px] sm:text-xs font-mono text-slate mb-6 whitespace-pre">
                   {service.specBadge}
                 </div>
 

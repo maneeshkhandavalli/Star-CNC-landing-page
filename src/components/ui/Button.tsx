@@ -9,6 +9,8 @@ interface ButtonProps {
   onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   className?: string;
   type?: "button" | "submit" | "reset";
+  target?: string;
+  rel?: string;
 }
 
 export default function Button({
@@ -18,9 +20,11 @@ export default function Button({
   onClick,
   className = "",
   type = "button",
+  target,
+  rel,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 font-medium text-sm px-6 py-3 rounded transition-all duration-200 cursor-pointer";
+    "inline-flex items-center justify-center gap-2 font-medium text-sm px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer";
   const variants: Record<Variant, string> = {
     primary: "bg-orange text-white hover:bg-orange-dark hover:scale-105 hover:shadow-lg hover:shadow-orange/25",
     outline: "border border-teal text-teal hover:bg-teal hover:text-white",
@@ -28,7 +32,7 @@ export default function Button({
   };
   const cls = `${base} ${variants[variant]} ${className}`;
 
-  if (href) return <a href={href} onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>} className={cls}>{children}</a>;
+  if (href) return <a href={href} onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>} target={target} rel={rel} className={cls}>{children}</a>;
   return (
     <button type={type} onClick={onClick} className={cls}>
       {children}

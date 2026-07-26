@@ -37,19 +37,19 @@ const products = [
 export default function Products() {
   return (
     <section id="products" className="bg-light-gray py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div data-reveal="" className="text-center mb-12">
           <SectionLabel>Parent Company</SectionLabel>
           <h2 className="text-navy text-[28px] sm:text-4xl font-bold">
             {parentCompany.name}
           </h2>
           <p className="text-slate mt-3 max-w-xl mx-auto">
-            Finished sheet metal products manufactured using Star CNC's precision
+            Finished sheet metal products manufactured using Star CNC&apos;s precision
             cutting and bending capabilities.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6">
           {products.map((product, i) => (
             <div
               key={product.title}
@@ -72,7 +72,7 @@ export default function Products() {
           ))}
 
           {/* CTA card */}
-          <div data-reveal="" data-reveal-delay="550" className="bg-teal-dark rounded-lg p-6 flex flex-col justify-between text-white">
+          <div data-reveal="" data-reveal-delay="550" className="bg-teal-dark rounded-lg p-6 flex flex-col justify-between text-white hover:-translate-y-1 hover:shadow-md transition-all duration-200">
             <div>
               <p className="text-white/50 text-xs uppercase tracking-widest mb-3">
                 Visit
@@ -87,7 +87,7 @@ export default function Products() {
               href={parentCompany.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 bg-orange text-white text-sm font-semibold px-5 py-2.5 rounded hover:bg-orange-dark transition-colors"
+              className="mt-8 inline-flex items-center gap-2 bg-orange text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-orange-dark transition-all duration-200"
             >
               Visit {parentCompany.website}
               <span className="material-symbols-outlined text-base">open_in_new</span>

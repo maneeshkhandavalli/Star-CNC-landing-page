@@ -19,7 +19,7 @@ type FormData = {
 };
 
 const inputCls =
-  "w-full border border-border rounded px-4 py-3 text-navy text-sm placeholder:text-slate/40 focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/15 transition bg-white";
+  "w-full border border-border rounded-lg px-4 py-3 text-navy text-sm placeholder:text-slate/40 focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/15 transition-all duration-200 bg-white";
 
 export default function Contact() {
   const [form, setForm] = useState<FormData>({
@@ -29,7 +29,7 @@ export default function Contact() {
     service: "",
     message: "",
   });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   function handleChange(
     e: React.ChangeEvent<
@@ -39,29 +39,31 @@ export default function Contact() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // ponytail: mailto fallback until EmailJS is wired up
-    const subject = encodeURIComponent(
-      `Quote Request — ${form.service || "General"} | ${form.company || form.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nService: ${form.service}\n\n${form.message}`
-    );
-    window.location.href = `mailto:${company.email2}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("submitting");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+      });
+      const data = await res.json();
+      setStatus(data.success ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
     <section id="contact" className="bg-off-white py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div data-reveal="" className="text-center mb-12">
           <SectionLabel>Get in Touch</SectionLabel>
           <h2 className="text-navy text-[28px] sm:text-4xl font-bold">
             Request a Quote
           </h2>
           <p className="text-slate mt-3 max-w-lg mx-auto">
-            Tell us your requirement and we'll get back to you with pricing and
+            Tell us your requirement and we&apos;ll get back to you with pricing and
             timeline.
           </p>
         </div>
@@ -70,6 +72,9 @@ export default function Contact() {
           {/* Form */}
           <div data-reveal="" className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-5">
+              <input type="hidden" name="access_key" value="fc238610-97f8-42ad-9666-ce75d406f80f" />
+              <input type="hidden" name="subject" value="New Enquiry — Star CNC Engineering Works Website" />
+              <input type="hidden" name="from_name" value="Star CNC Engineering Works Website" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium text-navy mb-1.5">
@@ -110,8 +115,12 @@ export default function Contact() {
                     type="tel"
                     required
                     value={form.phone}
-                    onChange={handleChange}
-                    placeholder="+91 98765 43210"
+                    maxLength={15}
+                    onChange={(e) => {
+                      const digits = e.target.value.replace(/\D/g, "").slice(0, 15);
+                      setForm((f) => ({ ...f, phone: digits }));
+                    }}
+                    placeholder="9876543210"
                     className={inputCls}
                   />
                 </div>
@@ -154,14 +163,22 @@ export default function Contact() {
                 type="submit"
                 variant="primary"
                 className="w-full justify-center text-base py-4"
+                disabled={status === "submitting"}
               >
-                Send Quote Request
-                <span className="material-symbols-outlined text-lg">send</span>
+                {status === "submitting" ? "Sending…" : "Send Quote Request"}
+                {status !== "submitting" && (
+                  <span className="material-symbols-outlined text-lg">send</span>
+                )}
               </Button>
 
-              {sent && (
+              {status === "success" && (
                 <p className="text-teal text-sm text-center font-medium">
-                  ✓ Request sent — we'll be in touch shortly.
+                  ✓ Request sent — we&apos;ll be in touch shortly.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-red-500 text-sm text-center font-medium">
+                  Something went wrong. Please try again or contact us on WhatsApp.
                 </p>
               )}
             </form>
@@ -175,7 +192,7 @@ export default function Contact() {
                 href={company.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-teal text-white p-4 rounded-lg hover:bg-teal-dark transition-colors"
+                className="flex items-center gap-4 bg-teal text-white p-4 rounded-lg hover:bg-teal-dark transition-all duration-200"
               >
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                   <WhatsAppIcon />
@@ -200,13 +217,13 @@ export default function Contact() {
                     </p>
                     <a
                       href={`tel:${company.phone1}`}
-                      className="text-navy text-sm font-medium hover:text-teal block"
+                      className="text-navy text-sm font-medium hover:text-teal transition-all duration-200 block"
                     >
                       {company.phone1}
                     </a>
                     <a
                       href={`tel:${company.phone2}`}
-                      className="text-navy text-sm font-medium hover:text-teal block"
+                      className="text-navy text-sm font-medium hover:text-teal transition-all duration-200 block"
                     >
                       {company.phone2}
                     </a>
@@ -223,13 +240,13 @@ export default function Contact() {
                     </p>
                     <a
                       href={`mailto:${company.email1}`}
-                      className="text-navy text-sm font-medium hover:text-teal block"
+                      className="text-navy text-sm font-medium hover:text-teal transition-all duration-200 block"
                     >
                       {company.email1}
                     </a>
                     <a
                       href={`mailto:${company.email2}`}
-                      className="text-navy text-sm font-medium hover:text-teal block"
+                      className="text-navy text-sm font-medium hover:text-teal transition-all duration-200 block"
                     >
                       {company.email2}
                     </a>
@@ -253,7 +270,7 @@ export default function Contact() {
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-teal text-xs font-medium hover:text-teal-dark mt-1 inline-block"
+                      className="text-teal text-xs font-medium hover:text-teal-dark mt-1 inline-block transition-all duration-200"
                     >
                       Open in Maps →
                     </a>

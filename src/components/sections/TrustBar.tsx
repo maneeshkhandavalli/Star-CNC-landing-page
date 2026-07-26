@@ -2,9 +2,9 @@ import { trustStats } from "@/lib/content";
 
 export default function TrustBar() {
   return (
-    <section className="bg-teal">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 divide-x divide-white/20">
+    <section className="bg-teal py-20 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {trustStats.map((stat, i) => (
             <div key={stat.label} data-reveal="" data-reveal-delay={String(i * 120)} className="flex flex-col items-center text-center px-4">
               <p className="text-white text-2xl font-sans font-bold tracking-tight leading-snug">

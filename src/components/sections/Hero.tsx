@@ -11,7 +11,8 @@ const marqueeLoop = Array.from({ length: 6 }, () => stripClients).flat();
 
 export default function Hero() {
   return (
-    <section className="bg-[#fafaf8] px-4 md:px-16 pt-6 md:pt-20 pb-0 md:pb-6">
+    <section id="home" className="bg-[#fafaf8] px-4 md:px-8 lg:px-12 pt-24 md:pt-28 pb-20 md:pb-24">
+      <div className="max-w-7xl mx-auto">
       {/* Two-column on desktop, stacked on mobile */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-0 md:gap-32 mb-0 md:mb-12">
         {/* Left column — badge + headline */}
@@ -34,13 +35,13 @@ export default function Hero() {
           <div className="mt-4 flex flex-row gap-3 mb-5 md:mb-0">
             <a
               href="#contact"
-              className="flex-1 bg-[#0b0f1a] text-white text-sm font-semibold py-3 rounded-lg text-center hover:bg-[#1a2a3a] transition-colors"
+              className="flex-1 bg-[#0b0f1a] text-white text-sm font-semibold py-3 rounded-lg text-center hover:bg-[#1a2a3a] transition-all duration-200"
             >
               Get a quote
             </a>
             <a
               href="#infrastructure"
-              className="border border-gray-200 text-gray-600 text-sm px-4 py-3 rounded-lg hover:border-gray-400 transition-colors"
+              className="border border-gray-200 text-gray-600 text-sm px-4 py-3 rounded-lg hover:border-gray-400 hover:text-[#0b0f1a] transition-all duration-200"
             >
               Machines →
             </a>
@@ -49,13 +50,13 @@ export default function Hero() {
       </div>
 
       {/* Full-width video */}
-      <div className="relative w-full h-[42vw] md:h-[55vh] min-h-[170px] rounded-2xl overflow-hidden mt-4 md:mt-2 mb-4">
+      <div className="relative w-full h-[74vh] md:h-[55vh] min-h-[560px] md:min-h-[420px] rounded-lg overflow-hidden mt-4 md:mt-2 mb-4">
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster="/imagesforcnc/cnc-cutting.webp"
+          poster="/imagesforstarcnc/cnc-cutting.avif"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: 0.75 }}
         >
@@ -66,7 +67,7 @@ export default function Hero() {
 
         {/* Stats overlay — 2×2 on mobile, single row on desktop */}
         <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 md:flex gap-2 md:gap-4">
-          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg md:rounded-xl p-3 md:p-5">
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg p-3 md:p-5">
             <div className="flex items-baseline gap-1">
               <span className="text-base md:text-2xl lg:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: "tabular-nums", fontFamily: "ui-monospace, system-ui, sans-serif" }}>15</span>
               <span className="text-xs md:text-sm text-white/50 font-normal">mm</span>
@@ -75,7 +76,7 @@ export default function Hero() {
               MAX MS THICKNESS
             </p>
           </div>
-          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg md:rounded-xl p-3 md:p-5">
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg p-3 md:p-5">
             <div className="flex items-baseline gap-1">
               <span className="text-base md:text-2xl lg:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: "tabular-nums", fontFamily: "ui-monospace, system-ui, sans-serif" }}>3</span>
               <span className="text-xs md:text-sm text-white/50 font-normal">metals</span>
@@ -84,7 +85,7 @@ export default function Hero() {
               MS · AL · SS
             </p>
           </div>
-          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg md:rounded-xl p-3 md:p-5">
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg p-3 md:p-5">
             <div className="flex items-baseline gap-1">
               <span className="text-base md:text-2xl lg:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: "tabular-nums", fontFamily: "ui-monospace, system-ui, sans-serif" }}>Any</span>
               <span className="text-xs md:text-sm text-white/50 font-normal">vol.</span>
@@ -93,7 +94,7 @@ export default function Hero() {
               PROTO → BULK
             </p>
           </div>
-          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg md:rounded-xl p-3 md:p-5">
+          <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg p-3 md:p-5">
             <div className="flex items-baseline gap-1">
               <span className="text-base md:text-2xl lg:text-3xl font-bold text-white tracking-tight" style={{ fontVariantNumeric: "tabular-nums", fontFamily: "ui-monospace, system-ui, sans-serif" }}>20</span>
               <span className="text-xs md:text-sm text-white/50 font-normal">+</span>
@@ -129,7 +130,7 @@ export default function Hero() {
           href={parentCompany.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex bg-[#f0f0ec] border border-gray-200 rounded-lg px-4 py-2 ml-auto items-center gap-2 hover:border-[#0f9d7a] transition-colors shrink-0"
+          className="hidden md:flex bg-[#f0f0ec] border border-gray-200 rounded-lg px-4 py-2 ml-auto items-center gap-2 hover:border-[#0f9d7a] transition-all duration-200 shrink-0"
         >
           <span className="text-xs text-gray-500">Need finished products?</span>
           <span className="text-xs text-[#0f9d7a] font-semibold">Visit P&amp;P Works →</span>
@@ -156,6 +157,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

@@ -41,7 +41,7 @@ const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(company.address
 export default function Infrastructure() {
   return (
     <section id="infrastructure" className="bg-white py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div className="text-center mb-12" data-reveal="">
           <SectionLabel>Infrastructure</SectionLabel>
           <h2 className="text-navy text-[28px] sm:text-4xl font-bold mt-1">
@@ -57,10 +57,10 @@ export default function Infrastructure() {
           {machines.map((m) => (
             <div
               key={m.name}
-              className="border border-border rounded-2xl overflow-hidden bg-off-white hover:shadow-md transition-shadow duration-200"
+              className="border border-border rounded-lg overflow-hidden bg-off-white hover:-translate-y-1 hover:shadow-md transition-all duration-200"
             >
               {/* Image */}
-              <div className="relative w-full h-56 overflow-hidden rounded-2xl">
+              <div className="relative w-full h-56 overflow-hidden">
                 <Image
                   src={m.image}
                   alt={m.name}
@@ -93,7 +93,7 @@ export default function Infrastructure() {
         {/* Factory address banner */}
         <div
           data-reveal=""
-          className="rounded-xl bg-[#E8F5F3] border border-teal/20 px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between"
+          className="rounded-lg bg-[#E8F5F3] border border-teal/20 px-6 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between"
         >
           <div className="flex items-start gap-3">
             <span className="material-symbols-outlined text-teal text-2xl shrink-0 mt-0.5">location_on</span>
@@ -102,7 +102,7 @@ export default function Infrastructure() {
               <p className="text-slate text-sm mt-0.5">{company.address}</p>
             </div>
           </div>
-          <Button href={mapsUrl} variant="primary" className="shrink-0 whitespace-nowrap">
+          <Button href={mapsUrl} variant="primary" target="_blank" rel="noopener noreferrer" className="shrink-0 whitespace-nowrap">
             <span className="material-symbols-outlined text-base">directions</span>
             Get Directions
           </Button>

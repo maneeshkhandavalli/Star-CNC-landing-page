@@ -3,13 +3,14 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function LoadingScreen() {
-  const [phase, setPhase] = useState<"loading" | "exiting" | "gone">("loading");
+  const [phase, setPhase] = useState<"loading" | "exiting" | "gone">(() =>
+    typeof window !== "undefined" && sessionStorage.getItem("starcnc_loaded")
+      ? "gone"
+      : "loading"
+  );
 
   useEffect(() => {
-    if (sessionStorage.getItem("starcnc_loaded")) {
-      setPhase("gone");
-      return;
-    }
+    if (phase === "gone") return;
 
     document.body.style.overflow = "hidden";
 
@@ -28,7 +29,7 @@ export default function LoadingScreen() {
       clearTimeout(goneTimer);
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [phase]);
 
   if (phase === "gone") return null;
 

@@ -3,7 +3,7 @@ import { company, parentCompany } from "@/lib/content";
 export default function Footer() {
   return (
     <footer className="bg-teal-dark text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="text-lg font-semibold">Star CNC</span>
             </div>
             <p className="text-white/65 text-sm leading-relaxed mb-4">
-              Precision laser cutting & CNC bending for India's EV, solar, and
+              Precision laser cutting & CNC bending for India&apos;s EV, solar, and
               industrial sectors. Est. 2009.
             </p>
             <span className="inline-block text-xs font-semibold uppercase tracking-wider text-teal bg-white/10 px-3 py-1 rounded-full">
@@ -38,7 +38,7 @@ export default function Footer() {
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-white/75 hover:text-white text-sm transition-colors"
+                    className="text-white/75 hover:text-white text-sm transition-all duration-200"
                   >
                     {label}
                   </a>
@@ -65,7 +65,7 @@ export default function Footer() {
                 href={parentCompany.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-orange hover:text-orange/80 text-sm font-medium transition-colors"
+                className="text-orange hover:text-orange/80 text-sm font-medium transition-all duration-200"
               >
                 {parentCompany.name} →
               </a>
@@ -89,10 +89,10 @@ export default function Footer() {
                   phone
                 </span>
                 <div>
-                  <a href={`tel:${company.phone1}`} className="hover:text-white block">
+                  <a href={`tel:${company.phone1}`} className="hover:text-white transition-all duration-200 block">
                     {company.phone1}
                   </a>
-                  <a href={`tel:${company.phone2}`} className="hover:text-white block">
+                  <a href={`tel:${company.phone2}`} className="hover:text-white transition-all duration-200 block">
                     {company.phone2}
                   </a>
                 </div>
@@ -101,7 +101,7 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-teal text-base shrink-0">
                   mail
                 </span>
-                <a href={`mailto:${company.email2}`} className="hover:text-white">
+                <a href={`mailto:${company.email2}`} className="hover:text-white transition-all duration-200">
                   {company.email2}
                 </a>
               </div>

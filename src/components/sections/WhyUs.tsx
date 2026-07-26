@@ -42,7 +42,7 @@ const usps = [
 export default function WhyUs() {
   return (
     <section id="why-us" className="bg-light-gray py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div data-reveal="" className="text-center mb-12">
           <SectionLabel>Why Choose Us</SectionLabel>
           <h2 className="text-navy text-[28px] sm:text-4xl font-bold">

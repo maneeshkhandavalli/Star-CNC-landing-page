@@ -21,7 +21,24 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
     }
     rafId = requestAnimationFrame(raf);
 
+    // Global interceptor for all <a href="#..."> hash links not already handled
+    // by a React onClick with e.preventDefault()
+    function handleHashClick(e: MouseEvent) {
+      if (e.defaultPrevented) return;
+      const anchor = (e.target as HTMLElement).closest('a[href^="#"]');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+      const id = href.slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -80 });
+    }
+    document.addEventListener('click', handleHashClick);
+
     return () => {
+      document.removeEventListener('click', handleHashClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       _lenis = null;

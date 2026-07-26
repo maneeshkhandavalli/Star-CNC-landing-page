@@ -2,8 +2,8 @@ import { company, parentCompany } from "@/lib/content";
 
 export default function GroupBanner() {
   return (
-    <div className="bg-[#E8F5F3] border-y border-teal/20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <section className="bg-[#E8F5F3] border-y border-teal/20 py-20 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
 
         {/* Desktop: 3-zone horizontal layout */}
         <div className="hidden sm:flex items-stretch">
@@ -105,6 +105,6 @@ export default function GroupBanner() {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }

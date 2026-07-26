@@ -30,7 +30,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section id="how-it-works" className="bg-off-white py-20 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div className="text-center mb-12" data-reveal="">
           <SectionLabel>Process</SectionLabel>
           <h2 className="text-navy text-[28px] sm:text-4xl font-bold mt-1">
